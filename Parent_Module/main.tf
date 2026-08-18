@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "rg_ghewar" {
-  name     = "rg-jamun"
+resource "azurerm_resource_group" "rg_ghewarwale" {
+  name     = "rg-jamunwale"
   location = "East US"
 }

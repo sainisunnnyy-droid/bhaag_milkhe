@@ -3,7 +3,7 @@ name: Terraform Azure CI/CD
 on:
   push:
     branches:
-      - feature/rg_sun
+      - feature/rg_sum
       - main
 
   pull_request:
