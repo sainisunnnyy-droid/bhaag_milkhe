@@ -8,7 +8,7 @@ resource "azurerm_resource_group" "rg_gudwale" {
   location = "East US"
 }
 
-resource "azurerm_resource_group" "rg_gumwale" {
-  name     = "rg-harwale"
+resource "azurerm_resource_group" "rg_humwale" {
+  name     = "rg-marwale"
   location = "East US"
 }
