@@ -22,6 +22,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -47,8 +48,7 @@ jobs:
 
       - name: Terraform Security Scan
         working-directory: ./Parent_Module
-        run: |
-          tfsec .
+        run: tfsec .
 
       - name: Terraform Plan
         working-directory: ./Parent_Module
@@ -61,6 +61,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
