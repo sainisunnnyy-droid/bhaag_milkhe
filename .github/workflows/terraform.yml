@@ -52,7 +52,9 @@ jobs:
 
       - name: Terraform Plan
         working-directory: ./Parent_Module
-        run: terraform plan
+        run: |
+          terraform plan -input=false -no-color -out=tfplan
+          terraform show -no-color tfplan
 
 
   terraform-apply:
