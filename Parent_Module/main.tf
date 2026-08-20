@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "rg_tewariya" {
-  name     = "rg-humana_jamun"
+resource "azurerm_resource_group" "rg_lewariya" {
+  name     = "rg-ghewariya"
   location = "East US"
 }
