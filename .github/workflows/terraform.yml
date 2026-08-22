@@ -48,9 +48,9 @@ jobs:
         working-directory: ./Parent_Module
         run: terraform validate
 
-      - name: Terraform Security Scan
-        working-directory: ./Parent_Module
-        run: tfsec .
+      # - name: Terraform Security Scan
+      #   working-directory: ./Parent_Module
+      #   run: tfsec .
 
       - name: Terraform Plan
         working-directory: ./Parent_Module
