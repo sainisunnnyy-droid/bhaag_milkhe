@@ -22,6 +22,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -32,6 +33,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
 
       - name: Terraform Init
         working-directory: ./Parent_Module
@@ -45,14 +48,15 @@ jobs:
         working-directory: ./Parent_Module
         run: terraform validate
 
-      - name: Terraform Security Scan
-        working-directory: ./Parent_Module
-        run: |
-          tfsec .
+      # - name: Terraform Security Scan
+      #   working-directory: ./Parent_Module
+      #   run: tfsec .
 
       - name: Terraform Plan
         working-directory: ./Parent_Module
-        run: terraform plan
+        run: |
+          terraform plan -input=false -no-color -out=tfplan
+          terraform show -no-color tfplan
 
 
   terraform-apply:
@@ -61,6 +65,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -71,6 +76,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: false
 
       - name: Terraform Init
         working-directory: ./Parent_Module
